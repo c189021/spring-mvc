@@ -1,14 +1,12 @@
 package com.metaverse.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HelloController {
 
-    @GetMapping("api/hello")
+    @GetMapping("api/hello") //"localhost:8080/api/hello" 이렇게 하면 작동 안됨 규칙임.
     @ResponseBody
     public String hello() {
         return "Hello World!";
@@ -25,4 +23,17 @@ public class HelloController {
     public String post() {
         return"Post Method 요청";
     }
+
+    @PutMapping("api/put")
+    @ResponseBody
+    public String put() {
+        return "Put Method 요청";
+    }
+
+    @DeleteMapping("api/delete")
+    @ResponseBody
+    public String delete() {
+        return "Delete Method 요청";
+    }
+
 }
